@@ -9,5 +9,5 @@ class Employee(models.Model):
     position = models.CharField(max_length=255)
     date_of_employment = models.DateField()
     salary = models.FloatField()
-    supervisor_id = models.PositiveBigIntegerField()
+    supervisor_id = models.PositiveIntegerField()
 
