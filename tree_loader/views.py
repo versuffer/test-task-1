@@ -1,10 +1,9 @@
-from django.http import HttpResponse
 from contextlib import redirect_stdout
 
+from django.http import HttpResponse
+from treelib import Tree
 
 from .models import Employee
-
-from treelib import Tree
 
 
 def get_data():
@@ -29,4 +28,4 @@ def EmployeeTreeView(request):
     create_tree()
     with open('tree.txt', 'r') as file_obj:
         data = file_obj.read()
-        return HttpResponse(data)
+        return HttpResponse(data, content_type='text/plain')

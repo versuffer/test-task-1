@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-    {% block content %}
-    <ul>
-        {% for empl in object_list %}
-            <p>{{ empl.id }} {{ empl.first_name }} {{ empl.last_name }} {{ empl.supervisor_id }}</p>
-        {% endfor %}
-    </ul>
-    {% endblock %}
