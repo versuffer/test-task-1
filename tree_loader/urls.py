@@ -1,7 +1,7 @@
 from django.urls import path
 
-from .views import employee_tree_view
+from .views import EmployeeTreeView
 
 urlpatterns = [
-    path('', employee_tree_view)
+    path('', EmployeeTreeView.as_view())
 ]
