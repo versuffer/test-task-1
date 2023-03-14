@@ -25,8 +25,16 @@ SECRET_KEY = 'django-insecure--5=kayn8)ogt(2rk54+w*wcbk(p)9^#9#p+%+3_g3!*g^x3#l@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# DEBUG_TOOLBAR_CONFIG = {
+#     'SHOW_TOOLBAR_CALLBACK': lambda r: False,  # disables it
+#     # '...
+# }
+
 ALLOWED_HOSTS = []
 
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 
 # Application definition
 
@@ -37,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
     'tree_loader',
 ]
 
@@ -48,14 +57,17 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'test_task_1.urls'
 
+TEMPLATES_DIR = BASE_DIR.joinpath('templates')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -111,6 +123,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    TEMPLATES_DIR.joinpath('css'),
+    TEMPLATES_DIR.joinpath('js'),
+    TEMPLATES_DIR.joinpath('images'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

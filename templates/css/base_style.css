@@ -1,0 +1,59 @@
+body {
+    background-color: rgb(236, 236, 236);
+}
+
+
+#nav-main {
+    border-bottom: solid rgb(105, 105, 105) 1px;
+}
+
+.navbar {
+    margin-left: 2%;
+}
+
+
+.navbar-brand {
+    max-width: 15%;
+}
+
+.navbar-brand:hover {
+    text-shadow: 0px 0px 1px rgb(255, 0, 0);
+    transition: 0.2s;
+}
+
+.nav-link {
+    color: black;
+    margin: 7px;
+}
+
+.nav-link:hover {
+
+    background-color: rgb(216, 216, 216);
+    transition: 0.3s;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 0px 1px rgb(55, 0, 255);
+}
+
+.sign-in {
+    border-left: solid black 1px;
+}
+
+#title {
+    font-weight: 600;
+}
+
+#comment {
+    font-style: italic;
+}
+
+.shadow {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    text-align: justify;
+}
+
+.content {
+    max-width: 60%;
+}
