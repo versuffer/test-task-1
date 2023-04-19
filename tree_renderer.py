@@ -1,4 +1,5 @@
 import os
+from functools import lru_cache
 from contextlib import redirect_stdout
 
 import django
@@ -14,6 +15,8 @@ def get_data():
     return Employee.objects.order_by('supervisor_id')
 
 
+
+@lru_cache
 def create_tree():
     queryset = get_data()
     tree = Tree()
